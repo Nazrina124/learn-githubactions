@@ -12,7 +12,7 @@ jobs:
           token: ${{ secrets.Vault_token }}
           skip_tls_verify: true
           secrets: |
-            secret/data/test/MYPASS | MYPASS ;
+            secret/data/test/MYPASS | MYPASS
     - run: env
 
     
