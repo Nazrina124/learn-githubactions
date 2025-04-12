@@ -1,1 +1,1 @@
-# learn-githubactions
+# githubactions

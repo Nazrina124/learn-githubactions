@@ -1,0 +1,17 @@
+name: vault Retrieve
+on: [push, workflow_dispatch]
+jobs:
+  DEV:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Import Secrets
+      id: import-secrets
+      uses: hashicorp/vault-action@v2
+      with:
+          url: https://vault-internal.naifah.online:8200
+          token: ${{ secrets.Vault_token }}
+          skip_tls_verify = true
+          secrets: |
+            secret/data/test/MYPASS | MYPASS ;
+    - run: env
+    
